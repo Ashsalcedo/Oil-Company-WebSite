@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Servicios - Soluciones Especializadas</title>
+    <meta name="description" content="Servicios especializados en campo, pre-comisionamiento, puesta en marcha, procura de equipos, cuartos de control y capacitación técnica para Oil & Gas[cite: 10].">
+
+    <link rel="icon" type="image/png" href="assets/images/GrupoMazavik_Logo_ColorSinLetras.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mazavik: {
+                            dark: '#11252C',
+                            accent: '#E5A010',
+                            light: '#F3F5F7',
+                            white: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .hover-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-mazavik-light font-sans text-mazavik-dark antialiased selection:bg-mazavik-accent selection:text-white">
+
+    <!-- ================= TOP-BAR MÓVIL ================= -->
+    <header class="lg:hidden bg-mazavik-white border-b border-gray-200 fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 shadow-sm">
+        <a href="index.html" class="flex items-center">
+            <img src="assets/images/GrupoMazavik_ColorFondoBlanco.png" alt="Logo Grupo Mazavik" class="h-10 w-auto object-contain">
+        </a>
+        <button id="menu-btn" class="text-mazavik-dark focus:outline-none p-1">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- ================= MENÚ DESPLEGABLE MÓVIL ================= -->
+    <div id="mobile-menu" class="fixed inset-0 bg-mazavik-dark bg-opacity-95 z-40 hidden flex-col justify-between px-8 py-20 lg:hidden overflow-y-auto">
+        <div class="space-y-6">
+            <div class="flex justify-end">
+                <button id="close-menu" class="text-white text-3xl font-bold">&times;</button>
+            </div>
+            <nav class="flex flex-col space-y-4 text-lg font-semibold">
+                <a href="index.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Inicio</a>
+                <a href="quienes-somos.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Quiénes Somos</a>
+                <a href="servicios.html" class="text-mazavik-accent border-l-4 border-mazavik-accent pl-3 py-1">Servicios</a>
+                <a href="proyectos.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Proyectos</a>
+                <a href="contacto.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Contacto</a>
+            </nav>
+        </div>
+        
+        <div class="pt-8 border-t border-gray-700 flex flex-col gap-3">
+            <a href="https://wa.me/" target="_blank" class="flex items-center gap-3 bg-[#25D366] text-white px-4 py-3 rounded-lg font-bold text-sm shadow-sm">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                WhatsApp Corporativo
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 bg-[#0A66C2] text-white px-4 py-3 rounded-lg font-bold text-sm shadow-sm">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="assets/docs/CV Empresarial MAZAVIK.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-white text-mazavik-dark px-4 py-3 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors">
+                <div class="bg-mazavik-accent px-2 py-1 rounded text-mazavik-dark font-black text-xs shadow-inner">PDF</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-sm leading-tight">CV Empresarial</span>
+                    <span class="text-[10px] text-gray-500 font-normal">Descargar documento</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="min-h-screen flex flex-col lg:flex-row">
+
+        <!-- ================= SIDEBAR FIJO DESKTOP (TEMA CLARO - ACTIVO) ================= -->
+        <aside class="hidden lg:flex lg:w-[22%] bg-mazavik-white border-r border-gray-200 flex-col justify-between fixed h-screen top-0 left-0 z-30 p-6 shadow-sm">
+            <div>
+                <a href="index.html" class="flex items-center gap-3 mb-10">
+                    <img src="assets/images/GrupoMazavik_ColorFondoBlanco.png" alt="Logo Grupo Mazavik" class="h-17 w-auto object-contain">
+                </a>
+                <nav class="space-y-1 font-medium text-sm">
+                    <a href="index.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">Inicio</a>
+                    <a href="quienes-somos.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">Quiénes Somos</a>
+                    <a href="servicios.html" class="flex items-center px-4 py-3 rounded-r-lg bg-mazavik-dark text-white border-l-4 border-mazavik-accent shadow-sm transition-all">Servicios</a>
+                    <a href="proyectos.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">Proyectos</a>
+                    <a href="contacto.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">Contacto</a>
+                </nav>
+            </div>
+            <div class="space-y-3 pt-6 border-t border-gray-100 text-xs">
+                <a href="https://wa.me/" target="_blank" class="flex items-center gap-3 p-2 rounded-lg bg-mazavik-light hover:bg-amber-50 transition-colors group">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-mazavik-dark">WhatsApp</span>
+                        <span class="text-gray-500">Contacto corporativo</span>
+                    </div>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 p-2 rounded-lg bg-mazavik-light hover:bg-blue-50 transition-colors group">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-mazavik-dark">LinkedIn</span>
+                        <span class="text-gray-500">Conéctate con nosotros</span>
+                    </div>
+                </a>
+                <a href="assets/docs/CV Empresarial MAZAVIK.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 rounded-lg bg-mazavik-dark text-white hover:bg-opacity-90 transition-all shadow-sm">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark font-bold">PDF</div>
+                    <div>
+                        <span class="block font-bold">CV Empresarial</span>
+                        <span class="text-gray-300">Descargar PDF</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- ================= CONTENIDO PRINCIPAL ================= -->
+        <main class="flex-1 lg:ml-[22%] pt-20 lg:pt-0 flex flex-col justify-between min-h-screen">
+            <div>
+                <!-- ================= HERO SERVICIOS (CON IMAGEN DE FONDO) ================= -->
+                <section class="relative py-16 lg:py-24 px-6 lg:px-16 text-white border-b border-gray-800 overflow-hidden flex items-center">
+                    
+                    <!-- 1. Imagen de Fondo -->
+                    <img src="assets/images/IngenieroFrenteMaquinas.jpeg" alt="Fondo Servicios Grupo Mazavik" class="absolute inset-0 w-full h-full object-cover z-0">
+                    
+                    <!-- 2. Capa Oscura (Overlay) para asegurar que el texto sea legible -->
+                    <div class="absolute inset-0 bg-mazavik-dark bg-opacity-85 z-10"></div>
+
+                    <!-- 3. Contenedor de Textos -->
+                    <div class="max-w-6xl mx-auto w-full relative z-20 reveal active">
+                        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+                            
+                            <!-- Mitad Izquierda: Título Principal -->
+                            <div class="max-w-2xl w-full">
+                                <div class="mb-6">
+                                    <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase">
+                                        Servicios
+                                    </span>
+                                </div>
+                                <h1 class="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-tight lg:leading-[1.1]">
+                                    Capacidad técnica para ejecutar cada etapa crítica del proyecto
+                                </h1>
+                            </div>
+
+                            <!-- Mitad Derecha: Párrafo Descriptivo (Esquina inferior derecha) -->
+                            <div class="max-w-sm w-full mt-8 lg:mt-0 lg:pb-2">
+                                <div class="border-l-2 border-mazavik-accent pl-5 py-1">
+                                    <p class="text-gray-300 text-sm leading-relaxed font-light">
+                                        Integramos ingeniería especializada, suministro estratégico y acompañamiento en campo para instalaciones de energía, petróleo y gas[cite: 10].
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= SECCIÓN 02: ALCANCE INTEGRAL ================= -->
+                <section class="bg-mazavik-white py-24 px-6 lg:px-16">
+                    <div class="max-w-6xl mx-auto reveal">
+                        <!-- Cuadrícula de 2 columnas en pantallas grandes (lg) -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                            
+                            <!-- Columna Izquierda: Textos -->
+                            <div>
+                                <!-- Eyebrow o texto superior pequeño -->
+                                <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-4">
+                                    Alcance Integral
+                                </span>
+                                <!-- Título principal de la sección -->
+                                <h2 class="text-3xl lg:text-5xl font-black text-mazavik-dark mb-6 leading-tight">
+                                    De la definición técnica a la operación confiable
+                                </h2>
+                                <!-- Párrafo descriptivo -->
+                                <p class="text-gray-600 text-base lg:text-lg leading-relaxed font-light">
+                                    Nuestro enfoque conecta especialistas, equipos y procesos para entregar soluciones coordinadas que responden a los requerimientos de seguridad, calidad, plazo y desempeño de cada activo.
+                                </p>
+                            </div>
+
+                            <!-- Columna Derecha: Imagen con Etiqueta Superpuesta (Badge) -->
+                            <div class="relative">
+                                <!-- Imagen representativa de industria/oil & gas (Unsplash) -->
+                                <img src="assets/images/EngineeringsWorking.JPG" alt="Instalaciones industriales y tuberías" class="w-full h-auto object-cover shadow-xl">
+                                
+                                <!-- Etiqueta amarilla (Posicionamiento Absoluto) -->
+                                <div class="absolute bottom-0 left-0 bg-mazavik-accent text-white px-6 py-4 shadow-lg">
+                                    <span class="block text-xs uppercase tracking-widest font-bold">
+                                        Ingeniería / Procura / Campo
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= SECCIÓN 03: SERVICIOS ESPECIALIZADOS (Índice de Tarjetas) ================= -->
+                <section class="bg-mazavik-light py-24 px-6 lg:px-16 border-t border-gray-200">
+                    <div class="max-w-6xl mx-auto reveal active">
+                        
+                        <!-- Encabezado de la Sección -->
+                        <div class="mb-16">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-3">
+                                Capacidad de Ejecución
+                            </span>
+                            <h2 class="text-4xl lg:text-5xl font-black text-mazavik-dark tracking-tight">
+                                Áreas de Especialidad
+                            </h2>
+                        </div>
+
+                        <!-- Cuadrícula de 4 Tarjetas Interactivas -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                            
+                            <!-- Tarjeta 01 -->
+                            <a href="#detalle-01" class="group flex flex-col bg-white p-8 lg:p-10 border-t-4 border-mazavik-accent shadow-sm hover-card relative min-h-[300px]">
+                                <span class="text-xl lg:text-2xl font-black text-mazavik-accent block mb-6">01</span>
+                                <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl mb-4 leading-snug">
+                                    Procura y Equipos de Proceso
+                                </h3>
+                                <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
+                                    Gestión, fabricación y suministro estratégico de válvulas, actuadores, patines modulares (Skids) y plantas de tratamiento.
+                                </p>
+                                <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+
+                            <!-- Tarjeta 02 -->
+                            <a href="#detalle-02" class="group flex flex-col bg-white p-8 lg:p-10 border-t-4 border-mazavik-accent shadow-sm hover-card relative min-h-[300px]">
+                                <span class="text-xl lg:text-2xl font-black text-mazavik-accent block mb-6">02</span>
+                                <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl mb-4 leading-snug">
+                                    Electrificación y Automatización
+                                </h3>
+                                <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
+                                    Soluciones tecnológicas avanzadas: Cuartos de Control, tableros CCM, Switchgear, telecomunicaciones y sistemas de seguridad industrial (ESD, F&G).
+                                </p>
+                                <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+
+                            <!-- Tarjeta 03 -->
+                            <a href="#detalle-03" class="group flex flex-col bg-white p-8 lg:p-10 border-t-4 border-mazavik-accent shadow-sm hover-card relative min-h-[300px]">
+                                <span class="text-xl lg:text-2xl font-black text-mazavik-accent block mb-6">03</span>
+                                <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl mb-4 leading-snug">
+                                    Servicios y Ejecución en Campo
+                                </h3>
+                                <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
+                                    Acompañamiento integral con cuadrillas especializadas para Pre-comisionamiento, Comisionamiento, Startup, pruebas físicas (hidrostáticas/Megger), operación y mantenimiento.
+                                </p>
+                                <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+
+                            <!-- Tarjeta 04 -->
+                            <a href="#detalle-04" class="group flex flex-col bg-white p-8 lg:p-10 border-t-4 border-mazavik-accent shadow-sm hover-card relative min-h-[300px]">
+                                <span class="text-xl lg:text-2xl font-black text-mazavik-accent block mb-6">04</span>
+                                <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl mb-4 leading-snug">
+                                    Asistencia Técnica y Capacitación
+                                </h3>
+                                <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
+                                    Soporte intelectual, consultoría experta de escritorio y programas de formación técnica en Confiabilidad Operacional (MCC) y Análisis Causa-Raíz.
+                                </p>
+                                <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= PROCURA Y EQUIPOS ESPECIALIZADOS ================= -->
+                <section id="detalle-01" class="bg-mazavik-dark py-24 px-6 lg:px-16 border-t border-gray-800">
+                    <div class="max-w-6xl mx-auto reveal active">
+                        
+                        <!-- Encabezado de Sección -->
+                        <div class="text-center mb-16">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2"> 01 Cadena de Suministro y Equipos</span>
+                            <h2 class="text-3xl lg:text-4xl font-black text-white mb-4">Procura y Equipos de Proceso</h2>
+                            <p class="text-gray-300 max-w-2xl mx-auto">Suministro de tecnología de punta y equipos industriales certificados para garantizar la máxima eficiencia operativa.</p>
+                        </div>
+
+                        <!-- Grid de 3 Tarjetas -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            
+                            <div onclick="openModal('modal-procura-1')" class="bg-white rounded-2xl shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer group flex flex-col h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="assets/images/EngineeringInspectingElectrical.jpg" alt="Distribución Eléctrica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-8 flex flex-col flex-grow">
+                                    <h3 class="font-bold text-mazavik-dark text-xl mb-3 leading-tight">Distribución Eléctrica y Control</h3>
+                                    <p class="text-gray-500 text-sm leading-relaxed font-light mb-6 flex-grow">
+                                        Sistemas inteligentes para la distribución segura de energía y el monitoreo centralizado de su operación.
+                                    </p>
+                                    <span class="text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 group-hover:text-amber-500 transition-colors">
+                                        Ver equipos <span class="text-lg leading-none">+</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div onclick="openModal('modal-procura-2')" class="bg-white rounded-2xl shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer group flex flex-col h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="assets/images/Windustries_skids.jpg" alt="Paquetes Modulares" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-8 flex flex-col flex-grow">
+                                    <h3 class="font-bold text-mazavik-dark text-xl mb-3 leading-tight">Paquetes Modulares y Skids</h3>
+                                    <p class="text-gray-500 text-sm leading-relaxed font-light mb-6 flex-grow">
+                                        Soluciones de proceso 'plug-and-play' diseñadas a la medida para agilizar la instalación y el arranque en planta.
+                                    </p>
+                                    <span class="text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 group-hover:text-amber-500 transition-colors">
+                                        Ver paquetes <span class="text-lg leading-none">+</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div onclick="openModal('modal-procura-3')" class="bg-white rounded-2xl shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer group flex flex-col h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="assets/images/EngineeringInstrumentation.jpg" alt="Control de Flujo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-8 flex flex-col flex-grow">
+                                    <h3 class="font-bold text-mazavik-dark text-xl mb-3 leading-tight">Control de Flujo e Instrumentación</h3>
+                                    <p class="text-gray-500 text-sm leading-relaxed font-light mb-6 flex-grow">
+                                        Hardware de alta precisión y confiabilidad para el manejo seguro de fluidos en tuberías de alta exigencia.
+                                    </p>
+                                    <span class="text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 group-hover:text-amber-500 transition-colors">
+                                        Ver instrumentos <span class="text-lg leading-none">+</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Modales de Procura -->
+                <div id="modal-procura-1" class="fixed inset-0 z-[100] flex items-center justify-center bg-mazavik-dark bg-opacity-80 opacity-0 pointer-events-none transition-opacity duration-300 px-4" onclick="closeModalOnBgClick(event, 'modal-procura-1')">
+                    <div class="bg-white w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 relative flex flex-col md:flex-row max-h-[90vh]">
+                        <button onclick="closeModal('modal-procura-1')" class="absolute top-4 right-4 bg-white/80 hover:bg-white rounded-full p-2 text-mazavik-dark z-10 transition-colors shadow-sm">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                        <div class="md:w-2/5 h-48 md:h-auto hidden sm:block">
+                            <img src="assets/images/EngineeringInspectingElectrical.jpg" alt="Distribución Eléctrica" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-3/5 p-8 md:p-10 overflow-y-auto">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Equipos y Componentes</span>
+                            <h3 class="font-black text-mazavik-dark text-2xl lg:text-3xl mb-4 leading-tight">Distribución Eléctrica y Control</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed font-light mb-6 pb-6 border-b border-gray-100">
+                                Suministramos y configuramos el "cerebro" eléctrico de su planta, garantizando continuidad operativa mediante equipos certificados bajo normativa internacional.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Switchgear (Media y baja tensión)</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Centros de Control de Motores (CCM)</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Sistemas UPS y Bancos de Baterías</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Transformadores Integrados</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modal-procura-2" class="fixed inset-0 z-[100] flex items-center justify-center bg-mazavik-dark bg-opacity-80 opacity-0 pointer-events-none transition-opacity duration-300 px-4" onclick="closeModalOnBgClick(event, 'modal-procura-2')">
+                    <div class="bg-white w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 relative flex flex-col md:flex-row max-h-[90vh]">
+                        <button onclick="closeModal('modal-procura-2')" class="absolute top-4 right-4 bg-white/80 hover:bg-white rounded-full p-2 text-mazavik-dark z-10 transition-colors shadow-sm">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                        <div class="md:w-2/5 h-48 md:h-auto hidden sm:block">
+                            <img src="assets/images/Windustries_skids.jpg" alt="Paquetes Modulares" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-3/5 p-8 md:p-10 overflow-y-auto">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Equipos y Componentes</span>
+                            <h3 class="font-black text-mazavik-dark text-2xl lg:text-3xl mb-4 leading-tight">Paquetes Modulares y Skids</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed font-light mb-6 pb-6 border-b border-gray-100">
+                                Diseñamos e integramos patines de proceso listos para conectarse. Reducimos el tiempo de construcción en campo integrando toda la instrumentación desde fábrica.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Sistemas de Inyección de Químicos</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Unidades de Deshidratación TEG</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Sistemas de Tratamiento de Aguas Congénitas</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Paquetes de Aire de Instrumentos</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modal-procura-3" class="fixed inset-0 z-[100] flex items-center justify-center bg-mazavik-dark bg-opacity-80 opacity-0 pointer-events-none transition-opacity duration-300 px-4" onclick="closeModalOnBgClick(event, 'modal-procura-3')">
+                    <div class="bg-white w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 relative flex flex-col md:flex-row max-h-[90vh]">
+                        <button onclick="closeModal('modal-procura-3')" class="absolute top-4 right-4 bg-white/80 hover:bg-white rounded-full p-2 text-mazavik-dark z-10 transition-colors shadow-sm">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                        <div class="md:w-2/5 h-48 md:h-auto hidden sm:block">
+                            <img src="assets/images/EngineeringInstrumentation.jpg" alt="Control de Flujo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-3/5 p-8 md:p-10 overflow-y-auto">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Equipos y Componentes</span>
+                            <h3 class="font-black text-mazavik-dark text-2xl lg:text-3xl mb-4 leading-tight">Control de Flujo e Instrumentación</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed font-light mb-6 pb-6 border-b border-gray-100">
+                                Proveeduría estratégica de componentes críticos. Seleccionamos la tecnología adecuada para soportar presiones extremas y fluidos corrosivos.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Válvulas de Control y de Seguridad</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Actuadores Eléctricos y Neumáticos</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Medidores Ultrasónicos y Coriolis</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Controladores de Presión</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= SECCIÓN: ELECTRIFICACIÓN Y AUTOMATIZACIÓN ================= -->
+                <section id="detalle-02" class="bg-mazavik-white py-24 px-6 lg:px-16 border-t border-gray-100">
+                    <div class="max-w-6xl mx-auto reveal active">
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            
+                            <div class="lg:pr-8">
+                                <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-4">
+                                    02 Especialización y Tecnología
+                                </span>
+                                <h2 class="text-3xl lg:text-5xl font-black text-mazavik-dark mb-6 leading-tight">
+                                    Electrificación y Automatización
+                                </h2>
+                                <p class="text-gray-600 text-base leading-relaxed font-light mb-10">
+                                    Integramos la tecnología que da vida y seguridad a su operación. A través de nuestra alianza técnica con W-Industries y Volta (Texas), manufacturamos cuartos de control y sistemas de seguridad bajo los estándares globales más estrictos para cualquier entorno industrial.
+                                </p>
+                                
+                                <div class="relative w-full h-64 lg:h-80 rounded-2xl overflow-hidden shadow-lg bg-mazavik-light">
+                                    <img id="tech-img-1" src="assets/images/ElectricalCabinet.jpg" alt="Cuartos de Control" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-100 z-10">
+                                    <img id="tech-img-2" src="assets/images/EmergencyButton.jpg" alt="Sistemas de Seguridad" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 z-0">
+                                    <img id="tech-img-3" src="assets/images/ScadaMonitoring.jpeg" alt="Telecomunicaciones" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 z-0">
+                                </div>
+                            </div>
+
+                            <div class="border-t border-gray-200">
+                                
+                                <div class="group border-b border-gray-200 py-6 cursor-pointer" onmouseenter="changeTechImage(1)">
+                                    <div class="flex items-start gap-6">
+                                        <span class="text-mazavik-accent font-bold text-xl lg:text-2xl opacity-50 group-hover:opacity-100 transition-opacity">01</span>
+                                        <div class="w-full">
+                                            <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl transition-colors group-hover:text-mazavik-accent">
+                                                Cuartos de Control y Distribución Eléctrica
+                                            </h3>
+                                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                                <div class="overflow-hidden">
+                                                    <ul class="mt-5 space-y-3 pb-2">
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Fabricación de cuartos de control modulares (eHouses).</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Switchgear de Media y Baja Tensión.</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Centros de Control de Motores (CCM).</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Sistemas UPS, Bancos de Baterías y Transformadores integrados.</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group border-b border-gray-200 py-6 cursor-pointer" onmouseenter="changeTechImage(2)">
+                                    <div class="flex items-start gap-6">
+                                        <span class="text-mazavik-accent font-bold text-xl lg:text-2xl opacity-50 group-hover:opacity-100 transition-opacity">02</span>
+                                        <div class="w-full">
+                                            <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl transition-colors group-hover:text-mazavik-accent">
+                                                Sistemas de Seguridad Industrial
+                                            </h3>
+                                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                                <div class="overflow-hidden">
+                                                    <ul class="mt-5 space-y-3 pb-2">
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Sistemas Digitales de Monitoreo y Control (SDMC).</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Detección de Fuego y Gas (F&G).</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Sistemas de Paros de Emergencia (ESD).</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Tableros de Seguridad y Control de Pozos (TSCP).</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group border-b border-gray-200 py-6 cursor-pointer" onmouseenter="changeTechImage(3)">
+                                    <div class="flex items-start gap-6">
+                                        <span class="text-mazavik-accent font-bold text-xl lg:text-2xl opacity-50 group-hover:opacity-100 transition-opacity">03</span>
+                                        <div class="w-full">
+                                            <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl transition-colors group-hover:text-mazavik-accent">
+                                                Telecomunicaciones e Infraestructura
+                                            </h3>
+                                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                                <div class="overflow-hidden">
+                                                    <ul class="mt-5 space-y-3 pb-2">
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Sistemas de Voceo y Notificación Industrial.</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Circuitos Cerrados de Televisión (CCTV) para monitoreo seguro.</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Sistemas de Control de Acceso y Radiocomunicación (VHF-FM).</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= SECCIÓN 04: OPERACIONES EN SITIO ================= -->
+                <section id="detalle-03" class="bg-mazavik-dark py-24 px-6 lg:px-16 border-t border-gray-800">
+                    <div class="max-w-6xl mx-auto reveal active">
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end mb-16">
+                            <div>
+                                <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-4">
+                                    03 Operaciones en sitio
+                                </span>
+                                <h2 class="text-3xl lg:text-5xl font-black text-white leading-tight">
+                                    Servicios y Ejecución en Campo
+                                </h2>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-base leading-relaxed font-light lg:max-w-md ml-auto">
+                                    Acompañamiento técnico experto para garantizar la transición óptima entre la fase de construcción a operación. Integramos cuadrillas especializadas para ejecutar cada etapa crítica del proyecto.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-l border-gray-700/50 grid grid-cols-1 md:grid-cols-2">
+                            
+                            <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
+                                <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Pre-comisionamiento y Pruebas</h3>
+                                <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
+                                    Inspección, ensayos no destructivos (NDT) e identificación de actividades pendientes de construcción.
+                                </p>
+                                <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                    <div class="overflow-hidden">
+                                        <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
+                                            Certificación de integridad previa a la operación. Ejecutamos pruebas hidrostáticas a válvulas, pruebas destructivas (Hipot) y pruebas eléctricas de aislamiento (Megger).
+                                        </p>
+                                    </div>
+                                </div>
+                                <button onclick="toggleOperationCard(this)" class="mt-8 text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 hover:text-amber-400 transition-colors w-fit focus:outline-none">
+                                    <span class="btn-text">Ver pruebas +</span>
+                                </button>
+                            </div>
+
+                            <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
+                                <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Comisionamiento</h3>
+                                <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
+                                    Ejecución de pruebas funcionales previas a las actividades de arranque y puesta en marcha.
+                                </p>
+                                <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                    <div class="overflow-hidden">
+                                        <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
+                                            Procesos de aseguramiento de calidad basados en métodos formales de verificación. Realizamos la validación de lazos de control y la documentación técnica para garantizar un traspaso seguro.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button onclick="toggleOperationCard(this)" class="mt-8 text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 hover:text-amber-400 transition-colors w-fit focus:outline-none">
+                                    <span class="btn-text">Ver detalles +</span>
+                                </button>
+                            </div>
+
+                            <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
+                                <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Puesta en Marcha (Startup)</h3>
+                                <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
+                                    Arranque operativo de instalaciones de producción, procesamiento, almacenamiento, transporte y refinación.
+                                </p>
+                                <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                    <div class="overflow-hidden">
+                                        <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
+                                            Optimizamos sus procesos garantizando la estabilización de operaciones de manera eficiente y segura, alcanzando las condiciones de diseño de la planta.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button onclick="toggleOperationCard(this)" class="mt-8 text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 hover:text-amber-400 transition-colors w-fit focus:outline-none">
+                                    <span class="btn-text">Ver detalles +</span>
+                                </button>
+                            </div>
+
+                            <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
+                                <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Operación y Mantenimiento</h3>
+                                <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
+                                    Proveemos personal y cuadrillas especializadas en instrumentación, electricidad y el área mecánica.
+                                </p>
+                                <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                    <div class="overflow-hidden">
+                                        <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
+                                            Asistencia técnica dirigida independiente a la fase de construcción. Mantenimiento continuo para sistemas de proceso de Aceite/Crudo, Gas y tratamiento de Agua.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button onclick="toggleOperationCard(this)" class="mt-8 text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 hover:text-amber-400 transition-colors w-fit focus:outline-none">
+                                    <span class="btn-text">Ver detalles +</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= SECCIÓN 05: ASISTENCIA TÉCNICA Y CAPACITACIÓN ================= -->
+                <section id="detalle-04" class="bg-white py-24 px-6 lg:px-16">
+                    <div class="max-w-4xl mx-auto reveal active">
+                        
+                        <div class="text-center mb-16">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-3">
+                                04 Soporte Intelectual y Formación
+                            </span>
+                            <h2 class="text-3xl lg:text-4xl font-black text-mazavik-dark mb-4 leading-tight">
+                                Asistencia Técnica y Capacitación
+                            </h2>
+                            <p class="text-gray-500 text-base leading-relaxed font-light max-w-2xl mx-auto">
+                                Acompañamiento consultivo y programas formativos especializados para empoderar a su equipo, optimizar activos y garantizar la confiabilidad operacional a largo plazo.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col gap-6">
+                            
+                            <div class="group bg-mazavik-light rounded-2xl border-l-4 border-mazavik-accent p-8 lg:p-10 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden cursor-default">
+                                <div class="flex flex-col md:flex-row md:items-start gap-6">
+                                    <span class="text-4xl lg:text-5xl font-black text-mazavik-accent leading-none">01</span>
+                                    <div class="w-full">
+                                        <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl mb-2">Consultoría de Escritorio y Soporte</h3>
+                                        <p class="text-gray-500 text-sm lg:text-base leading-relaxed">
+                                            Análisis especializado e ingeniería de soporte para la optimización de procesos y el diseño de estrategias operativas.
+                                        </p>
+                                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                            <div class="overflow-hidden">
+                                                <div class="pt-6 mt-6 border-t border-gray-200">
+                                                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                                                        Brindamos asesoría analítica de alta especialización para la resolución de cuellos de botella, revisión de ingeniería conceptual y estructuración de planes de mantenimiento preventivo adaptados a su infraestructura.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="group bg-mazavik-light rounded-2xl border-l-4 border-mazavik-accent p-8 lg:p-10 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden cursor-default">
+                                <div class="flex flex-col md:flex-row md:items-start gap-6">
+                                    <span class="text-4xl lg:text-5xl font-black text-mazavik-accent leading-none">02</span>
+                                    <div class="w-full">
+                                        <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl mb-2">Confiabilidad Operacional</h3>
+                                        <p class="text-gray-500 text-sm lg:text-base leading-relaxed">
+                                            Programas formativos avanzados enfocados en contexto operacional, análisis de criticidad y metodologías MCC.
+                                        </p>
+                                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                            <div class="overflow-hidden">
+                                                <div class="pt-6 mt-6 border-t border-gray-200">
+                                                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                                                        Capacitamos a su personal técnico en la gestión integral de activos mediante Mantenimiento Centrado en Confiabilidad (MCC), permitiéndole maximizar la disponibilidad de los equipos y reducir costos operativos.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="group bg-mazavik-light rounded-2xl border-l-4 border-mazavik-accent p-8 lg:p-10 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden cursor-default">
+                                <div class="flex flex-col md:flex-row md:items-start gap-6">
+                                    <span class="text-4xl lg:text-5xl font-black text-mazavik-accent leading-none">03</span>
+                                    <div class="w-full">
+                                        <h3 class="font-bold text-mazavik-dark text-xl lg:text-2xl mb-2">Gestión de Fallas y Análisis Causa-Raíz (RCA)</h3>
+                                        <p class="text-gray-500 text-sm lg:text-base leading-relaxed">
+                                            Metodologías formales y prácticas para la identificación, diagnóstico y mitigación de fallas recurrentes.
+                                        </p>
+                                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                                            <div class="overflow-hidden">
+                                                <div class="pt-6 mt-6 border-t border-gray-200">
+                                                    <p class="text-gray-600 text-sm font-light leading-relaxed">
+                                                        Implementamos herramientas de diagnóstico de ingeniería para investigar eventos no deseados en planta, asegurando soluciones definitivas que eviten la repetición de paros no programados.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= MEGA FOOTER INSTITUCIONAL ================= -->
+            <footer class="bg-mazavik-dark text-white pt-16 pb-8 px-6 lg:px-16 border-t border-gray-800 mt-auto">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
+                        <div class="md:col-span-1">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-3">Grupo Mazavik</span>
+                            <h3 class="text-xl lg:text-2xl font-bold text-white leading-snug">Ingeniería especializada para activos que no pueden detenerse.</h3>
+                        </div>
+                        <div class="flex flex-col space-y-4 pt-2">
+                            <a href="index.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Inicio</a>
+                            <a href="quienes-somos.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Quiénes Somos</a>
+                            <a href="servicios.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Servicios</a>
+                            <a href="proyectos.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Proyectos</a>
+                            <a href="contacto.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Contacto</a>
+                        </div>
+                        <div class="flex flex-col space-y-4 pt-2">
+                            <a href="https://wa.me/" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#25D366] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                                <span class="text-sm">WhatsApp</span>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#0A66C2] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                <span class="text-sm">LinkedIn</span>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#E1306C] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                                <span class="text-sm">Instagram</span>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#1877F2] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                                <span class="text-sm">Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-700 mt-16 pt-8 text-left text-xs text-gray-400">
+                        <p>&copy; 2026 Grupo Mazavik. Todos los derechos-reservados. Soluciones B2B para Oil & Gas y Energía.</p>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+        });
+
+        const observerOptions = { threshold: 0.1 };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const innerBox = modal.querySelector('div.bg-white');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+            innerBox.classList.remove('scale-95');
+            innerBox.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const innerBox = modal.querySelector('div.bg-white');
+            innerBox.classList.remove('scale-100');
+            innerBox.classList.add('scale-95');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnBgClick(event, modalId) {
+            if (event.target.id === modalId) {
+                closeModal(modalId);
+            }
+        }
+
+        function changeTechImage(activeIndex) {
+            for (let i = 1; i <= 3; i++) {
+                const img = document.getElementById(`tech-img-${i}`);
+                if (img) {
+                    if (i === activeIndex) {
+                        img.classList.remove('opacity-0', 'z-0');
+                        img.classList.add('opacity-100', 'z-10');
+                    } else {
+                        img.classList.remove('opacity-100', 'z-10');
+                        img.classList.add('opacity-0', 'z-0');
+                    }
+                }
+            }
+        }
+
+        function toggleOperationCard(btn) {
+            const card = btn.closest('.operation-card');
+            const shortText = card.querySelector('.short-text');
+            const expandedContent = card.querySelector('.expanded-content');
+            const expandedText = expandedContent.querySelector('p');
+            const btnText = btn.querySelector('.btn-text');
+
+            if (card.classList.contains('is-open')) {
+                card.classList.remove('is-open');
+                expandedText.classList.remove('opacity-100');
+                expandedText.classList.add('opacity-0');
+                expandedContent.classList.remove('grid-rows-[1fr]');
+                expandedContent.classList.add('grid-rows-[0fr]');
+                setTimeout(() => {
+                    shortText.style.display = 'block';
+                    void shortText.offsetWidth; 
+                    shortText.classList.remove('opacity-0');
+                }, 400);
+                btnText.innerHTML = 'Ver detalles +';
+            } else {
+                card.classList.add('is-open');
+                shortText.classList.add('opacity-0');
+                setTimeout(() => {
+                    shortText.style.display = 'none';
+                    expandedContent.classList.remove('grid-rows-[0fr]');
+                    expandedContent.classList.add('grid-rows-[1fr]');
+                    setTimeout(() => {
+                        expandedText.classList.remove('opacity-0');
+                        expandedText.classList.add('opacity-100');
+                    }, 100);
+                }, 300);
+                btnText.innerHTML = 'Cerrar <span class="text-lg leading-none ml-1">&times;</span>';
+            }
+        }
+    </script>
+</body>
+</html>

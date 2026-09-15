@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- [MODIFICAR AQUÍ]: Título específico para la sección Quiénes Somos -->
+    <title>Quiénes Somos - Excelencia Operativa</title>
+
+    <!-- [INFO]: Meta descripción optimizada para la identidad corporativa -->
+    <meta name="description" content="Conozca nuestra historia como empresa mexicana fundada en 2019, nuestra misión, visión, valores y por qué elegirnos en el sector Oil & Gas.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/GrupoMazavik_Logo_ColorSinLetras.png">
+
+    <!-- [IMPORTANTE]: Importación de Google Fonts (Inter simulando Avenir) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- [IMPORTANTE]: Inyección de Tailwind CSS vía CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- [IMPORTANTE]: Configuración del Tema Corporativo en Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mazavik: {
+                            dark: '#11252C',   /* Azul Petróleo Oscuro: Sidebar, headers y textos principales */
+                            accent: '#E5A010', /* Amarillo Industrial Ocre: Botones, badges y estados activos */
+                            light: '#F3F5F7',  /* Gris Técnico Claro: Fondos de tarjetas y secciones */
+                            white: '#FFFFFF'   /* Blanco Puro */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- [IMPORTANTE]: Estilos CSS personalizados para animaciones y diseño responsivo -->
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-mazavik-light font-sans text-mazavik-dark antialiased selection:bg-mazavik-accent selection:text-white">
+
+    <!-- ================= TOP-BAR MÓVIL ================= -->
+    <header class="lg:hidden bg-mazavik-white border-b border-gray-200 fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 shadow-sm">
+        <!-- Logo institucional móvil con Imagen -->
+        <a href="index.html" class="flex items-center">
+            <img src="assets/images/GrupoMazavik_ColorFondoBlanco.png" alt="Logo Grupo Mazavik" class="h-10 w-auto object-contain">
+        </a>
+        <!-- Botón Hamburguesa -->
+        <button id="menu-btn" class="text-mazavik-dark focus:outline-none p-1">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- ================= MENÚ DESPLEGABLE MÓVIL ================= -->
+    <div id="mobile-menu" class="fixed inset-0 bg-mazavik-dark bg-opacity-95 z-40 hidden flex-col justify-between px-8 py-20 lg:hidden overflow-y-auto">
+        <div class="space-y-6">
+            <div class="flex justify-end">
+                <button id="close-menu" class="text-white text-3xl font-bold">&times;</button>
+            </div>
+            <nav class="flex flex-col space-y-4 text-lg font-semibold">
+                <!-- Enlaces móviles con estado activo en quiénes somos -->
+                <a href="index.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Inicio</a>
+                <a href="quienes-somos.html" class="text-mazavik-accent border-l-4 border-mazavik-accent pl-3 py-1">Quiénes Somos</a>
+                <a href="servicios.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Servicios</a>
+                <a href="proyectos.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Proyectos</a>
+                <a href="contacto.html" class="text-white hover:text-mazavik-accent transition-colors pl-3 py-1">Contacto</a>
+            </nav>
+        </div>
+        
+        <!-- Sección Inferior del Menú Móvil: Enlaces de Contacto y CV -->
+        <div class="pt-8 border-t border-gray-700 flex flex-col gap-3">
+            <!-- Botón WhatsApp -->
+            <a href="https://wa.me/" target="_blank" class="flex items-center gap-3 bg-[#25D366] text-white px-4 py-3 rounded-lg font-bold text-sm shadow-sm">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                WhatsApp Corporativo
+            </a>
+
+            <!-- Botón LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 bg-[#0A66C2] text-white px-4 py-3 rounded-lg font-bold text-sm shadow-sm">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+
+            <!-- Botón Descargar CV (Fondo Blanco) -->
+            <a href="assets/docs/CV Empresarial MAZAVIK.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-white text-mazavik-dark px-4 py-3 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors">
+                <div class="bg-mazavik-accent px-2 py-1 rounded text-mazavik-dark font-black text-xs shadow-inner">
+                    PDF
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-sm leading-tight">CV Empresarial</span>
+                    <span class="text-[10px] text-gray-500 font-normal">Descargar documento</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- ================= SIDEBAR FIJO DESKTOP (TEMA Claro) ================= --
+    <div class="min-h-screen flex flex-col lg:flex-row">
+
+        -- ================= SIDEBAR FIJO DESKTOP ================= --
+        <aside class="hidden lg:flex lg:w-[22%] bg-mazavik-white border-r border-gray-200 flex-col justify-between fixed h-screen top-0 left-0 z-30 p-6 shadow-sm">
+            -- Sección Superior: Logo y Menú --
+            <div>
+                -- Logotipo Grupo Mazavik --
+                <a href="index.html" class="block mb-10">
+                    <img src="assets/images/GrupoMazavik_ColorFondoBlanco.png" alt="Logo Grupo Mazavik" class="h-17 w-auto object-contain">
+                </a>
+
+                -- Navegación Vertical --
+                <nav class="space-y-1 font-medium text-sm">
+                    <a href="index.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">
+                        Inicio
+                    </a>
+                    -- Página Activa (Quiénes Somos) --
+                    <a href="quienes-somos.html" class="flex items-center px-4 py-3 rounded-r-lg bg-mazavik-dark text-white border-l-4 border-mazavik-accent shadow-sm transition-all">
+                        Quiénes Somos
+                    </a>
+                    <a href="servicios.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">
+                        Servicios
+                    </a>
+                    <a href="proyectos.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">
+                        Proyectos
+                    </a>
+                    <a href="contacto.html" class="flex items-center px-4 py-3 rounded-r-lg text-mazavik-dark hover:bg-gray-100 transition-all">
+                        Contacto
+                    </a>
+                </nav>
+            </div>
+
+            -- Sección Inferior: Enlaces de Contacto y CV --
+            <div class="space-y-3 pt-6 border-t border-gray-100 text-xs">
+                
+                -- WhatsApp --
+                <a href="https://wa.me/" target="_blank" class="flex items-center gap-3 p-2 rounded-lg bg-mazavik-light hover:bg-amber-50 transition-colors group">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-mazavik-dark">WhatsApp</span>
+                        <span class="text-gray-500">Contacto corporativo</span>
+                    </div>
+                </a>
+
+                -- LinkedIn --
+                <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 p-2 rounded-lg bg-mazavik-light hover:bg-blue-50 transition-colors group">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-mazavik-dark">LinkedIn</span>
+                        <span class="text-gray-500">Conéctate con nosotros</span>
+                    </div>
+                </a>
+
+                -- Descargar CV --
+                <a href="assets/docs/CV_Empresarial_Grupo_Mazavik.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 rounded-lg bg-mazavik-dark text-white hover:bg-opacity-90 transition-all shadow-sm">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark font-bold">
+                        PDF
+                    </div>
+                    <div>
+                        <span class="block font-bold">CV Empresarial</span>
+                        <span class="text-gray-300">Descargar PDF</span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside> -->
+
+        <!-- ================= SIDEBAR FIJO DESKTOP (TEMA OSCURO) ================= -->
+        <aside class="hidden lg:flex lg:w-[22%] bg-mazavik-dark border-r border-gray-800 flex-col justify-between fixed h-screen top-0 left-0 z-30 p-6 shadow-2xl">
+            <!-- Sección Superior: Logo y Menú -->
+            <div>
+                <!-- Logotipo Grupo Mazavik -->
+                <!-- Nota: Aquí es donde más adelante colocarás tu logo con letras blancas -->
+                <a href="index.html" class="block mb-10">
+                    <img src="assets/images/GrupoMazavik_ColorFondoOscuro.png" alt="Logo Grupo Mazavik" class="h-17 w-auto object-contain">
+                </a>
+
+                <!-- Navegación Vertical -->
+                <nav class="space-y-1 font-medium text-sm">
+                    <!-- [MODIFICACIÓN]: Enlaces inactivos ahora son text-gray-300 con hover:bg-white/5 (blanco translúcido) -->
+                    <a href="index.html" class="flex items-center px-4 py-3 rounded-r-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                        Inicio
+                    </a>
+                    <!-- Página Activa (Quiénes Somos) -->
+                    <!-- [MODIFICACIÓN]: Fondo bg-white/10 para resaltar sutilmente sobre el fondo oscuro -->
+                    <a href="quienes-somos.html" class="flex items-center px-4 py-3 rounded-r-lg bg-white/10 text-white border-l-4 border-mazavik-accent shadow-sm transition-all">
+                        Quiénes Somos
+                    </a>
+                    <a href="servicios.html" class="flex items-center px-4 py-3 rounded-r-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                        Servicios
+                    </a>
+                    <a href="proyectos.html" class="flex items-center px-4 py-3 rounded-r-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                        Proyectos
+                    </a>
+                    <a href="contacto.html" class="flex items-center px-4 py-3 rounded-r-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                        Contacto
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Sección Inferior: Enlaces de Contacto y CV -->
+            <div class="space-y-3 pt-6 border-t border-gray-700 text-xs">
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/" target="_blank" class="flex items-center gap-3 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-white">WhatsApp</span>
+                        <span class="text-gray-400">Contacto corporativo</span>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-white">LinkedIn</span>
+                        <span class="text-gray-400">Conéctate con nosotros</span>
+                    </div>
+                </a>
+
+                <!-- Descargar CV -->
+                <a href="assets/docs/CV Empresarial MAZAVIK.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2 rounded-lg border border-gray-600 bg-white/5 hover:bg-white/10 transition-all shadow-sm">
+                    <div class="bg-mazavik-accent p-2 rounded text-mazavik-dark font-bold">
+                        PDF
+                    </div>
+                    <div>
+                        <span class="block font-bold text-white">CV Empresarial</span>
+                        <span class="text-gray-400">Descargar PDF</span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+
+        <!-- ================= CONTENIDO PRINCIPAL ================= -->
+        <main class="flex-1 lg:ml-[22%] pt-20 lg:pt-0">
+
+            <!-- ================= NUEVO ENCABEZADO: HERO QUIÉNES SOMOS ================= -->
+            <section class="bg-mazavik-dark py-16 lg:py-20 px-6 lg:px-16 text-white border-b border-gray-800">
+                <div class="max-w-6xl mx-auto reveal active">
+                    
+                    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+                        
+                        <!-- Mitad Izquierda: Título Principal -->
+                        <div class="max-w-2xl w-full">
+                            <div class="mb-6">
+                                <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase">
+                                    Quiénes somos
+                                </span>
+                            </div>
+                            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-tight lg:leading-[1.1]">
+                                Ingeniería que transforma la complejidad en resultados operativos
+                            </h1>
+                        </div>
+
+                        <!-- Mitad Derecha: Párrafo Descriptivo (Esquina inferior derecha) -->
+                        <div class="max-w-sm w-full mt-8 lg:mt-0 lg:pb-2">
+                            <div class="border-l-2 border-mazavik-accent pl-5 py-1">
+                                <p class="text-gray-300 text-sm leading-relaxed font-light">
+                                    Empresa mexicana respaldada por un equipo de ingenieros con más de 27 años de trayectoria en la industria petrolera. <br>Ejecutamos soluciones integrales para el sector energético, de infraestructura y Oil & Gas. 
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- PÁGINA 7: IDENTIDAD -->
+            <section class="bg-mazavik-white py-24 px-6 lg:px-16">
+                <div class="max-w-5xl mx-auto reveal">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Identidad Corporativa</span>
+                            <h1 class="text-3xl lg:text-5xl font-black text-mazavik-dark mb-6 leading-tight">
+                                Soluciones Integrales de Alto Desempeño
+                            </h1>
+                            <div class="space-y-4 text-gray-600 text-base leading-relaxed font-light">
+                                <p>
+                                    Fundada en 2019, Grupo Mazavik es una empresa de ingeniería mexicana especializada en ofrecer soluciones de alto desempeño para el sector energético, Oil & Gas y la industria de manufactura pesada.                       
+                                </p>
+                                <p>
+                                    Nuestro equipo combina ingeniería de precisión con experiencia comprobada en campo. Abarcamos todo el ciclo de su proyecto: desde la procura especializada, hasta la ejecución del comisionamiento y la estabilización segura de sus operaciones.                                
+                                </p>
+                                <p>
+                                    Para respaldar la exigencia operativa de plantas, fábricas y plataformas, operamos en sinergia técnica con W-Industries (Houston, TX). A través de esta alianza, integramos manufactura de clase mundial en sistemas de automatización, cuartos de control, electrificación y paquetes modulares a la medida.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <img src="assets/images/EngineeringInspectingTubes.jpg" alt="Instalaciones industriales Grupo Mazavik" class="rounded-2xl shadow-xl object-cover w-full h-[450px]">
+                            <!-- Badge destacado 2019 Empresa Mexicana -->
+                            <div class="absolute bottom-6 left-6 bg-mazavik-dark text-white p-6 rounded-xl border-l-4 border-mazavik-accent shadow-lg">
+                                <span class="block text-2xl font-black text-mazavik-accent">2019</span>
+                                <span class="block text-xs uppercase tracking-widest font-bold">EMPRESA MEXICANA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PÁGINA 8: MISIÓN Y VISIÓN -->
+            <section class="bg-mazavik-light py-24 px-6 lg:px-16 border-t border-b border-gray-200">
+                <div class="max-w-5xl mx-auto reveal">
+                    <div class="text-center mb-16">
+                        <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Excelencia Operativa e Ingeniería de Precisión</span>
+                        <h2 class="text-3xl lg:text-4xl font-black text-mazavik-dark">Misión y Visión Institucional</h2>
+                    </div>
+
+                    <!-- Grid de 2 Tarjetas Comparativas -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Tarjeta Misión -->
+                        <div class="bg-mazavik-white p-8 rounded-2xl shadow-sm hover-card border-t-4 border-mazavik-accent flex flex-col justify-between">
+                            <div>
+                                <span class="text-4xl font-black text-mazavik-dark opacity-20 block mb-4">01</span>
+                                <h3 class="font-bold text-mazavik-dark text-xl mb-4">Misión</h3>
+                                <p class="text-gray-600 leading-relaxed font-light">
+                                    Brindar servicios que definan el concepto de soluciones integrales y especializadas en instalaciones estratégicas para el sector Oil&Gas en (México y Latino América).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta Visión -->
+                        <div class="bg-mazavik-white p-8 rounded-2xl shadow-sm hover-card border-t-4 border-mazavik-dark flex flex-col justify-between">
+                            <div>
+                                <span class="text-4xl font-black text-mazavik-dark opacity-20 block mb-4">02</span>
+                                <h3 class="font-bold text-mazavik-dark text-xl mb-4">Visión</h3>
+                                <p class="text-gray-600 leading-relaxed font-light">
+                                    Grupo MAZAVIK se proyecta como líder en alianzas para compartir con sus clientes el talento intelectual más experimentado y herramientas tecnológicas de vanguardia para ser reconocido como el referente en servicios en plantas y apoyo en la construcción pozos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PÁGINA 9: VALORES -->
+            <section class="bg-mazavik-white py-24 px-6 lg:px-16">
+                <div class="max-w-6xl mx-auto reveal">
+                    <div class="text-center mb-16">
+                        <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Cultura Corporativa</span>
+                        <h2 class="text-3xl lg:text-4xl font-black text-mazavik-dark mb-4">Valores que se convierten en desempeño</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">Principios compartidos y diferenciales que sostienen cada intervención.</p>
+                    </div>
+
+                    <!-- Grid Modular de 7 Tarjetas de Valores -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Valor 1 -->
+                        <div class="bg-mazavik-light p-6 rounded-xl border border-gray-200 hover-card">
+                            <h3 class="font-bold text-mazavik-dark text-lg mb-2 text-mazavik-accent">Honestidad</h3>
+                            <p class="text-gray-600 text-sm">Verdad ante los hechos.</p>
+                        </div>
+                        <!-- Valor 2 -->
+                        <div class="bg-mazavik-light p-6 rounded-xl border border-gray-200 hover-card">
+                            <h3 class="font-bold text-mazavik-dark text-lg mb-2 text-mazavik-accent">Innovación</h3>
+                            <p class="text-gray-600 text-sm">Pienso y actúo como no lo había hecho.</p>
+                        </div>
+                        <!-- Valor 3 -->
+                        <div class="bg-mazavik-light p-6 rounded-xl border border-gray-200 hover-card">
+                            <h3 class="font-bold text-mazavik-dark text-lg mb-2 text-mazavik-accent">Eficiencia</h3>
+                            <p class="text-gray-600 text-sm">Obtengo lo mejor de los recursos en una situación dada.</p>
+                        </div>
+                        <!-- Valor 4 -->
+                        <div class="bg-mazavik-light p-6 rounded-xl border border-gray-200 hover-card">
+                            <h3 class="font-bold text-mazavik-dark text-lg mb-2 text-mazavik-accent">Creatividad</h3>
+                            <p class="text-gray-600 text-sm">Ingenio en acción.</p>
+                        </div>
+                        <!-- Valor 5 -->
+                        <div class="bg-mazavik-light p-6 rounded-xl border border-gray-200 hover-card">
+                            <h3 class="font-bold text-mazavik-dark text-lg mb-2 text-mazavik-accent">Orden</h3>
+                            <p class="text-gray-600 text-sm">Cada idea, cada recurso, cada situación en su lugar.</p>
+                        </div>
+                        <!-- Valor 6 -->
+                        <div class="bg-mazavik-light p-6 rounded-xl border border-gray-200 hover-card">
+                            <h3 class="font-bold text-mazavik-dark text-lg mb-2 text-mazavik-accent">Pertenencia</h3>
+                            <p class="text-gray-600 text-sm">Soy parte de la solución y sus consecuencias.</p>
+                        </div>
+                        <!-- Valor 7 -->
+                        <div class="bg-mazavik-light p-6 rounded-xl border border-gray-200 hover-card md:col-span-2 lg:col-span-1 lg:col-start-2">
+                            <h3 class="font-bold text-mazavik-dark text-lg mb-2 text-mazavik-accent">Entendimiento</h3>
+                            <p class="text-gray-600 text-sm">Escucho y actúo para solucionar.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PÁGINA 10: VENTAJAS (¿POR QUÉ ELEGIRNOS?) -->
+            <section class="bg-mazavik-dark text-white py-24 px-6 lg:px-16">
+                <div class="max-w-6xl mx-auto reveal">
+                    <div class="text-center mb-16">
+                        <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Propuesta de Valor</span>
+                        <h2 class="text-3xl lg:text-4xl font-black mb-4">¿Por qué Elegir a Grupo Mazavik?</h2>
+                    </div>
+
+                    <!-- Grid de 4 Cuadrantes Numerados -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Cuadrante 01 -->
+                        <div class="bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700 hover-card">
+                            <span class="text-4xl font-black text-mazavik-accent block mb-4">01</span>
+                            <h3 class="font-bold text-xl mb-2">Visión Integral</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Simplificamos procesos, reducimos riesgos y alineamos tecnologías complementarias a lo largo de todo el proyecto.</p>
+                        </div>
+                        <!-- Cuadrante 02 -->
+                        <div class="bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700 hover-card">
+                            <span class="text-4xl font-black text-mazavik-accent block mb-4">02</span>
+                            <h3 class="font-bold text-xl mb-2">Personal Especializado</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Equipo de ingenieros con más de 10 años de experiencia en distintas disciplinas y procesos industriales en Energía y Oil & Gas.</p>
+                        </div>
+                        <!-- Cuadrante 03 -->
+                        <div class="bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700 hover-card">
+                            <span class="text-4xl font-black text-mazavik-accent block mb-4">03</span>
+                            <h3 class="font-bold text-xl mb-2">Gestión Centralizada</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Ofrecemos un solo punto de contacto para todos los entregables, asegurando eficiencia y claridad en la comunicación.</p>
+                        </div>
+                        <!-- Cuadrante 04 -->
+                        <div class="bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700 hover-card">
+                            <span class="text-4xl font-black text-mazavik-accent block mb-4">04</span>
+                            <h3 class="font-bold text-xl mb-2">Calidad y Seguridad HSE</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Proyectos innovadores, rentables y entregados en tiempo y forma, con los más altos estándares de calidad, seguridad y cumplimiento HSE.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PÁGINA 10.1: VENTAJAS COMPETITIVAS ================= -->
+            <section class="bg-mazavik-dark text-white py-24 px-6 lg:px-16">
+                <div class="max-w-6xl mx-auto reveal">
+                    <!-- Usamos Grid para separar el título de la lista en pantallas grandes -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+                        
+                        <!-- Columna Izquierda: Título -->
+                        <div class="lg:col-span-5">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-4">
+                                Diferenciadores
+                            </span>
+                            <h2 class="text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+                                Ventajas competitivas
+                            </h2>
+                        </div>
+
+                        <!-- Columna Derecha: Lista con Checkmarks -->
+                        <div class="lg:col-span-7 flex flex-col">
+                            
+                            <!-- Item 1 -->
+                            <div class="flex items-start gap-4 py-6 border-b border-gray-700">
+                                <!-- Ícono de Check -->
+                                <svg class="w-6 h-6 text-mazavik-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <p class="text-gray-100 text-lg font-light">Experiencia en proyectos de alta exigencia técnica.</p>
+                            </div>
+                            
+                            <!-- Item 2 -->
+                            <div class="flex items-start gap-4 py-6 border-b border-gray-700">
+                                <svg class="w-6 h-6 text-mazavik-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <p class="text-gray-100 text-lg font-light">Capacidad para integrar ingeniería, procura, commissioning y startup.</p>
+                            </div>
+                            
+                            <!-- Item 3 -->
+                            <div class="flex items-start gap-4 py-6 border-b border-gray-700">
+                                <svg class="w-6 h-6 text-mazavik-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <p class="text-gray-100 text-lg font-light">Respaldo de alianzas comerciales y tecnológicas especializadas.</p>
+                            </div>
+                            
+                            <!-- Item 4 (Sin borde inferior para cerrar limpio) -->
+                            <div class="flex items-start gap-4 py-6">
+                                <svg class="w-6 h-6 text-mazavik-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <p class="text-gray-100 text-lg font-light">Enfoque en continuidad operativa, seguridad y confiabilidad.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PÁGINA 11: CALL TO ACTION (Hablemos de su proyecto) ================= -->
+            <section class="bg-white py-24 px-6 lg:px-16">
+                <div class="max-w-6xl mx-auto reveal">
+                    
+                    <!-- Contenedor Gris con Borde Amarillo (Caja Principal) -->
+                    <div class="bg-mazavik-light border-l-[8px] border-mazavik-accent p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 shadow-sm">
+                        
+                        <!-- Textos a la izquierda -->
+                        <div class="max-w-2xl">
+                            <span class="text-gray-500 font-bold text-xs tracking-widest uppercase block mb-4">
+                                Hablemos de su proyecto
+                            </span>
+                            <h2 class="text-3xl lg:text-4xl font-black text-mazavik-dark leading-tight">
+                                Un socio técnico para los retos más críticos de su operación
+                            </h2>
+                        </div>
+                        
+                        <!-- Botón a la derecha (flex-shrink-0 evita que se aplaste) -->
+                        <div class="flex-shrink-0">
+                            <!-- Link que dirige a tu página de contacto -->
+                            <a href="contacto.html" class="inline-flex items-center justify-center gap-3 bg-mazavik-accent text-white font-bold px-8 py-4 shadow hover:bg-amber-500 transition-all">
+                                Contactar a un especialista
+                                <!-- Ícono de flecha superior derecha -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M7 7h10v10"></path></svg>
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================= FOOTER INSTITUCIONAL ================= -->
+            <footer class="bg-mazavik-dark text-white pt-16 pb-8 px-6 lg:px-16 border-t border-gray-800">
+                <div class="max-w-6xl mx-auto">
+                    
+                    <!-- Cuadrícula Superior de 3 Columnas -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
+                        
+                        <!-- Columna 1: Marca y Eslogan -->
+                        <div class="md:col-span-1">
+                            <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-3">
+                                Grupo Mazavik
+                            </span>
+                            <h3 class="text-xl lg:text-2xl font-bold text-white leading-snug">
+                                Ingeniería especializada para activos que no pueden detenerse.
+                            </h3>
+                        </div>
+
+                        <!-- Columna 2: Enlaces Rápidos (TODAS LAS PÁGINAS) -->
+                        <div class="flex flex-col space-y-4 pt-2">
+                            <a href="index.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Inicio</a>
+                            <a href="quienes-somos.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Quiénes Somos</a>
+                            <a href="servicios.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Servicios</a>
+                            <a href="proyectos.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Proyectos</a>
+                            <a href="contacto.html" class="text-gray-300 hover:text-mazavik-accent transition-colors text-sm">Contacto</a>
+                        </div>
+
+                        <!-- Columna 3: Redes Sociales y Contacto -->
+                        <div class="flex flex-col space-y-4 pt-2">
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#25D366] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                                <span class="text-sm">WhatsApp</span>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#0A66C2] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                <span class="text-sm">LinkedIn</span>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#E1306C] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                                <span class="text-sm">Instagram</span>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="https://facebook.com" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                <svg class="w-5 h-5 group-hover:text-[#1877F2] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                                <span class="text-sm">Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Línea Separadora y Derechos Reservados -->
+                    <div class="border-t border-gray-700 mt-16 pt-8 text-left text-xs text-gray-400">
+                        <p>&copy; 2026 Grupo Mazavik. Todos los derechos reservados. Soluciones B2B para Oil & Gas y Energía.</p>
+                    </div>
+
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Script Vanilla JS para el Menú Móvil y Animaciones IntersectionObserver -->
+    <script>
+        // Toggle Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+        });
+
+        // IntersectionObserver para animaciones .reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
