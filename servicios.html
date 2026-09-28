@@ -3,26 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Servicios - Soluciones Especializadas</title>
-    <meta name="description" content="Servicios especializados en campo, pre-comisionamiento, puesta en marcha, procura de equipos, cuartos de control y capacitación técnica para Oil & Gas.">
 
+    <!-- Título optimizado para posicionamiento de servicios y términos técnicos -->
+    <title>Grupo Mazavik | Servicios de Ingeniería, Procura y Comisionamiento Oil & Gas</title>
+
+    <!-- Meta descripción orientada a clientes B2B del sector energético -->
+    <meta name="description" content="Servicios integrales en 4 pilares: sistemas modulares de proceso, electrificación y e-Houses, automatización y SCADA, y comisionamiento en campo para Oil & Gas y Energía.">
+    <meta name="keywords" content="Grupo Mazavik, comisionamiento, procura especializada, skids de proceso, HPU, switchgear, e-Houses, cuartos de control, automatización industrial, SCADA, ESD, F&G, Oil & Gas México, Ciudad del Carmen">
+    <meta name="author" content="Grupo Mazavik">
+    <meta name="robots" content="index, follow">
+
+    <!-- URL Canónica -->
+    <link rel="canonical" href="https://grupomazavik.com/servicios.html">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/GrupoMazavik_Logo_ColorSinLetras.png">
+
+    <!-- ================= METADATOS OPEN GRAPH (Redes Sociales y Mensajería) ================= -->
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Grupo Mazavik | Servicios y Soluciones Especializadas en Campo">
+    <meta property="og:description" content="Capacidad técnica para ejecutar cada etapa crítica: desde la ingeniería y procura hasta el comisionamiento y arranque seguro.">
+    <meta property="og:url" content="https://grupomazavik.com/servicios.html">
+    <meta property="og:site_name" content="Grupo Mazavik">
+    <meta property="og:image" content="https://grupomazavik.com/assets/images/GrupoMazavik_ColorFondoBlanco.png">
+    <meta property="og:image:alt" content="Servicios Técnicos Grupo Mazavik">
+
+    <!-- ================= METADATOS TWITTER CARDS ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grupo Mazavik | Catálogo de Servicios y Capacidades">
+    <meta name="twitter:description" content="Sistemas modulares, electrificación, automatización y cuadrillas de comisionamiento para activos que no pueden detenerse.">
+    <meta name="twitter:image" content="https://grupomazavik.com/assets/images/GrupoMazavik_ColorFondoBlanco.png">
+
+    <!-- ================= DATOS ESTRUCTURADOS (Schema Service y Catálogo para IA) ================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "provider": {
+        "@type": "Corporation",
+        "name": "Grupo Mazavik",
+        "url": "https://grupomazavik.com/",
+        "logo": "https://grupomazavik.com/assets/images/GrupoMazavik_ColorFondoBlanco.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ciudad del Carmen",
+          "addressRegion": "Campeche",
+          "addressCountry": "MX"
+        }
+      },
+      "name": "Servicios Especializados de Ingeniería, Procura y Comisionamiento",
+      "serviceType": "Ingeniería Industrial y Servicios para Oil & Gas",
+      "areaServed": {
+        "@type": "Country",
+        "name": "México"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Catálogo de Especialidades de Grupo Mazavik",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sistemas Integrados y Equipos de Proceso",
+              "description": "Diseño, fabricación y procura de patines modulares sobre skids, unidades HPU, deshidratación TEG, acondicionamiento de gas y tratamiento de aguas congénitas bajo normas ASME y API."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Electrificación y Distribución Eléctrica",
+              "description": "Soluciones de potencia en media y baja tensión: switchgear, centros de control de motores (CCM), variadores de frecuencia (VDF), transformadores y cuartos eléctricos modulares (e-Houses)."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automatización y Soluciones Tecnológicas",
+              "description": "Control distribuido (DCS/PLC), interfaces HMI, telemetría SCADA, sistemas instrumentados de seguridad (ESD, F&G bajo normas IEC 61508/61511) y tableros SDMC."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Servicios en Campo y Comisionamiento",
+              "description": "Acompañamiento en sitio: pre-comisionamiento, pruebas no destructivas (NDT), pruebas hidrostáticas, arranque seguro (startup), mantenimiento de activos y capacitación en confiabilidad operacional."
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- [IMPORTANTE]: Importación de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- [IMPORTANTE]: Inyección de Tailwind CSS vía CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- [IMPORTANTE]: Configuración del Tema Corporativo en Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         mazavik: {
-                            dark: '#11252C',
-                            accent: '#E5A010',
-                            light: '#F3F5F7',
-                            white: '#FFFFFF'
+                            dark: '#11252C',   /* Azul Petróleo Oscuro */
+                            accent: '#E5A010', /* Amarillo Industrial Ocre */
+                            light: '#F3F5F7',  /* Gris Técnico Claro */
+                            white: '#FFFFFF'   /* Blanco Puro */
                         }
                     },
                     fontFamily: {
@@ -33,12 +128,27 @@
         }
     </script>
 
+    <!-- [IMPORTANTE]: Estilos CSS personalizados para animaciones y diseño responsivo -->
     <style>
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.5, 0, 0, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .hover-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-        html { scroll-behavior: smooth; }
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.7s cubic-bezier(0.5, 0, 1); 
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        .hover-card { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .hover-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); 
+        }
+        html { 
+            scroll-behavior: smooth; 
+        }
     </style>
 </head>
 <body class="bg-mazavik-light font-sans text-mazavik-dark antialiased selection:bg-mazavik-accent selection:text-white">
@@ -199,7 +309,7 @@
 
                             <!-- Columna Derecha: Imagen con Etiqueta Superpuesta (Badge) -->
                             <div class="relative">
-                                <!-- Imagen representativa de industria/oil & gas (Unsplash) -->
+                                <!-- Imagen representativa de industria/oil & gas -->
                                 <img src="assets/images/EngineeringsWorking.JPG" alt="Instalaciones industriales y tuberías" class="w-full h-auto object-cover shadow-xl">
                                 
                                 <!-- Etiqueta amarilla (Posicionamiento Absoluto) -->
@@ -238,7 +348,7 @@
                                     Sistemas Integrados y Equipos de Proceso
                                 </h3>
                                 <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
-                                    Ingeniería, fabricación y suministro de patines modulares (skids), sistemas de potencia hidráulica (HPU), dosificación de químicos y paquetes de acondicionamiento bajo normas ASME y API.
+                                    Diseño, fabricación y suministro de equipos modulares sobre skids, sistemas HPU, dosificación de químicos y paquetes de acondicionamiento de gas bajo normas ASME y API.
                                 </p>
                                 <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -252,7 +362,7 @@
                                     Electrificación y Distribución Eléctrica
                                 </h3>
                                 <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
-                                    Soluciones de potencia en medio y bajo voltaje, integración de switchgear certificado, centros de control de motores (CCM) y centros de equipos eléctricos modulares (CEEs / e-Houses).
+                                    Soluciones integrales en media y baja tensión: variadores de frecuencia (VDF), transformadores, switchgear, centros de control de motores (CCM), tableros de control y cuartos eléctricos modulares (e-Houses).
                                 </p>
                                 <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -266,7 +376,7 @@
                                     Automatización y Soluciones Tecnológicas
                                 </h3>
                                 <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
-                                    Arquitectura de control para procesos críticos: sistemas DCS, programación de PLC/HMI, plataformas de supervisión SCADA, redes industriales convergentes IT/OT y ciberseguridad industrial.
+                                    Arquitectura de control y protección crítica: sistemas de paro por emergencia (ESD), detección de gas y fuego (F&G), sistemas digitales de monitoreo y control (SDMC), plataformas SCADA y control distribuido (DCS/PLC).
                                 </p>
                                 <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -280,7 +390,7 @@
                                     Servicios en Campo y Comisionamiento
                                 </h3>
                                 <p class="text-gray-500 font-light text-sm lg:text-base leading-relaxed mb-12">
-                                    Despliegue operativo y cuadrillas en sitio para pre-comisionamiento, pruebas funcionales, arranque seguro (startup), operación, mantenimiento continuo y soporte técnico.
+                                    Acompañamiento operativo en sitio: pre-comisionamiento, pruebas funcionales, arranque seguro (startup) y asistencia técnica continua en planta o plataforma.
                                 </p>
                                 <div class="mt-auto text-mazavik-dark group-hover:text-mazavik-accent transform group-hover:translate-x-2 transition-all duration-300">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -299,7 +409,7 @@
                         <div class="text-center mb-16">
                             <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">01 Módulos y Paquetes Llave en Mano</span>
                             <h2 class="text-3xl lg:text-4xl font-black text-white mb-4">Sistemas Integrados y Equipos de Proceso</h2>
-                            <p class="text-gray-300 max-w-2xl mx-auto">Ingeniería, procura, ensamble y suministro de patines modulares (skids), sistemas hidráulicos y control de flujo bajo estándares ASME y API.</p>
+                            <p class="text-gray-300 max-w-2xl mx-auto">Diseño, procura, ensamble y suministro de equipos modulares sobre skids, unidades HPU, paquetes de acondicionamiento de gas y tratamiento de fluidos bajo normas ASME y API.</p>
                         </div>
 
                         <!-- Grid de 3 Tarjetas -->
@@ -313,7 +423,7 @@
                                 <div class="p-8 flex flex-col flex-grow">
                                     <h3 class="font-bold text-mazavik-dark text-xl mb-3 leading-tight">Paquetes Modulares y Skids de Proceso</h3>
                                     <p class="text-gray-500 text-sm leading-relaxed font-light mb-6 flex-grow">
-                                        Sistemas de proceso 'plug-and-play' diseñados e integrados desde fábrica para optimizar los tiempos de instalación en sitio.
+                                        Sistemas de proceso modulares integrados desde fábrica: deshidratación y desalado de crudo, deshidratación de gas y tratamiento de aguas.
                                     </p>
                                     <span class="text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 group-hover:text-amber-500 transition-colors">
                                         Ver paquetes <span class="text-lg leading-none">+</span>
@@ -345,7 +455,7 @@
                                 <div class="p-8 flex flex-col flex-grow">
                                     <h3 class="font-bold text-mazavik-dark text-xl mb-3 leading-tight">Control de Flujo e Instrumentación</h3>
                                     <p class="text-gray-500 text-sm leading-relaxed font-light mb-6 flex-grow">
-                                        Hardware de alta precisión y confiabilidad para el manejo y medición segura de fluidos en condiciones severas.
+                                        Hardware analítico y de alta precisión para el manejo, mezclado y monitoreo en línea de fluidos en condiciones severas.
                                     </p>
                                     <span class="text-mazavik-accent font-bold text-sm inline-flex items-center gap-1 group-hover:text-amber-500 transition-colors">
                                         Ver instrumentos <span class="text-lg leading-none">+</span>
@@ -372,13 +482,13 @@
                             <span class="text-mazavik-accent font-bold text-xs tracking-widest uppercase block mb-2">Módulos de Proceso</span>
                             <h3 class="font-black text-mazavik-dark text-2xl lg:text-3xl mb-4 leading-tight">Paquetes Modulares y Skids</h3>
                             <p class="text-gray-600 text-sm leading-relaxed font-light mb-6 pb-6 border-b border-gray-100">
-                                Diseñamos e integramos patines de proceso listos para conectarse. Reducimos el tiempo de montaje en campo suministrando equipos pre-ensamblados y probados bajo normativas ASME y API.
+                                Diseñamos e integramos equipos modulares sobre skids listos para operar. Reducimos el tiempo de montaje en campo suministrando paquetes pre-ensamblados y probados bajo normativas ASME y API.
                             </p>
                             <ul class="space-y-4">
-                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Sistemas de Inyección de Químicos (API-675 y API-674)</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Sistemas de Deshidratación y Desalado de Crudo</span></li>
                                 <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Unidades de Deshidratación de Gas con Glicol (TEG)</span></li>
-                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Módulos de Separación y Tratamiento de Aguas Congénitas</span></li>
-                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Patines de Medición y Acondicionamiento de Fluidos</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Plantas y Módulos de Tratamiento de Aguas Congénitas con Control Inteligente</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Sistemas de Inyección de Químicos (API-675 y API-674) y Acondicionamiento de Gas</span></li>
                             </ul>
                         </div>
                     </div>
@@ -426,10 +536,10 @@
                                 Proveeduría estratégica de hardware crítico y elementos finales de control. Integramos tecnología certificada para soportar presiones severas, altas temperaturas y fluidos corrosivos.
                             </p>
                             <ul class="space-y-4">
-                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Válvulas de Control, Globo, Bola y Mariposa</span></li>
-                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Válvulas de Seguridad y Alivio de Presión (PSV)</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Válvulas de Control, Globo, Bola, Mariposa y Alivio (PSV)</span></li>
                                 <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Actuadores Neumáticos, Eléctricos e Hidráulicos con Posicionador</span></li>
-                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Medidores de Flujo Másico Coriolis y Ultrasónicos</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Medidores de Flujo Másico Coriolis, Ultrasónicos y Mezcladores Estáticos</span></li>
+                                <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Analizadores de Proceso en Línea (Medición Continua de pH y Propiedades)</span></li>
                                 <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-mazavik-accent flex-shrink-0"></div><span class="text-gray-700 text-sm font-medium">Transmisores y Controladores de Presión, Nivel y Temperatura</span></li>
                             </ul>
                         </div>
@@ -451,14 +561,14 @@
                                     Electrificación y Distribución Eléctrica
                                 </h2>
                                 <p class="text-gray-600 text-base leading-relaxed font-light mb-10">
-                                    Suministramos e integramos soluciones de electrificación para activos industriales en tierra y costa afuera (onshore y offshore). A través de la alianza con Volta y W-Industries, respaldamos el ciclo completo de potencia: desde tableros de medio y bajo voltaje hasta centros modulares.
+                                    Suministramos e integramos soluciones integrales de potencia en media y baja tensión para activos industriales onshore y offshore. A través de la alianza con Volta y W-Industries, respaldamos el ciclo completo: variadores de frecuencia (VDF), transformadores, switchgear, centros de control de motores (CCM), tableros de control y cuartos modulares.
                                 </p>
                                 
                                 <div class="relative w-full h-64 lg:h-80 rounded-2xl overflow-hidden shadow-lg bg-mazavik-light">
                                     <!-- Imagen 1: Medio Voltaje -->
                                     <img id="tech-img-1" src="assets/images/EngineeringInspectingElectrical.jpg" alt="Equipos de Medio Voltaje" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-100 z-10">
                                     <!-- Imagen 2: Bajo Voltaje -->
-                                    <img id="tech-img-2" src="assets/images/ElectricalCabinet.jpg" alt="Equipos de Bajo Voltaje y CCM" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 z-0">
+                                    <img id="tech-img-2" src="assets/images/LowVoltage_Equipment.jpg" alt="Equipos de Bajo Voltaje y CCM" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 z-0">
                                     <!-- Imagen 3: Distribución de Energía -->
                                     <img id="tech-img-3" src="assets/images/WIndustriesEngineering.jpg" alt="Unidades de Distribución de Energía" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 z-0">
                                     <!-- Imagen 4: Centros de Equipos Eléctricos -->
@@ -483,7 +593,7 @@
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Switchgear con blindaje metálico de 5 kV a 38 kV, con resistencia a arcos eléctricos bajo normas ANSI e IEC.</span></li>
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Centros de Control de Motores de Media Tensión (MV-MCC) configurados con los interruptores de su preferencia.</span></li>
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Variadores de Frecuencia de Media Tensión (MV-VFD) con enfriamiento por aire o por líquido.</span></li>
-                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Integración de relevadores de protección y sistemas de transferencia automática.</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Transformadores de potencia e integración de relevadores de protección y transferencia automática.</span></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -503,9 +613,9 @@
                                                 <div class="overflow-hidden">
                                                     <ul class="mt-5 space-y-3 pb-2">
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Switchgear de bajo voltaje en gabinetes metálicos certificados bajo normativas UL 1558 y UL 891.</span></li>
-                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Centros de Control de Motores (CCM) de bajo voltaje bajo estándar UL 845.</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Centros de Control de Motores (CCM) y tableros de control de bajo voltaje bajo estándar UL 845.</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Variadores de Frecuencia (VDF) de baja tensión para control de bombeo y compresión.</span></li>
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Acoplamiento integral entre Switchgear y CCMs para una solución unificada de distribución.</span></li>
-                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Personalización de componentes y marcas de interruptores según los requerimientos del cliente.</span></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -526,7 +636,7 @@
                                                     <ul class="mt-5 space-y-3 pb-2">
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Racks de interruptores y paneles para áreas clasificadas (NEMA 3R y NEMA 4X).</span></li>
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Cajas de bus y ductos de barras en cobre o aluminio con aislamiento certificado.</span></li>
-                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Gabinetes individuales o hechos a la medida con compuertas de acceso desmontables.</span></li>
+                                                        <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Tableros de distribución y gabinetes hechos a la medida con compuertas de acceso desmontables.</span></li>
                                                         <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-mazavik-accent flex-shrink-0 mt-1.5"></div><span class="text-gray-600 text-sm">Sistemas UPS industriales, bancos de baterías y transformadores integrados.</span></li>
                                                     </ul>
                                                 </div>
@@ -578,7 +688,7 @@
                             </div>
                             <div>
                                 <p class="text-gray-400 text-base leading-relaxed font-light lg:max-w-md ml-auto">
-                                    Arquitectura de control avanzada, integración de datos y ciberseguridad industrial. Desarrollamos soluciones a la medida para optimizar, monitorear y salvaguardar procesos críticos en tiempo real.
+                                    Arquitectura de control y protección para procesos industriales de alta exigencia. Desarrollamos soluciones a la medida en sistemas de paro por emergencia (ESD), detección de gas y fuego (F&G), monitoreo digital (SDMC), plataformas SCADA y control distribuido (DCS/PLC).
                                 </p>
                             </div>
                         </div>
@@ -590,12 +700,12 @@
                             <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
                                 <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Sistemas de Control DCS, PLC y HMI</h3>
                                 <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
-                                    Diseño, programación e integración de controladores lógicos programables, interfaces hombre-máquina y control distribuido.
+                                    Diseño, programación e integración de controladores lógicos programables, interfaces hombre-máquina y control distribuido (DCS/PLC).
                                 </p>
                                 <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
                                     <div class="overflow-hidden">
                                         <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
-                                            Desarrollo de arquitecturas de automatización desde cero o modernización de sistemas heredados. Implementamos programación estandarizada, algoritmos de control de procesos, lazos PID y pantallas operativas intuitivas que minimizan paros operativos y fallas humanas.
+                                            Desarrollo de arquitecturas de automatización desde la ingeniería conceptual hasta la modernización de sistemas de control en operación. Implementamos programación bajo estándares normativos, algoritmos para control de procesos continuos, lazos PID y pantallas operativas de alta visibilidad para minimizar errores de operador y tiempos improductivos.
                                         </p>
                                     </div>
                                 </div>
@@ -608,12 +718,12 @@
                             <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
                                 <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">SCADA y Gestión de Información</h3>
                                 <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
-                                    Plataformas de supervisión remota, adquisición de datos y telemetría multi-sitio para activos continuos en tierra y costa afuera.
+                                    Plataformas de supervisión en tiempo real, adquisición de datos de proceso y telemetría para activos en tierra y costa afuera.
                                 </p>
                                 <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
                                     <div class="overflow-hidden">
                                         <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
-                                            Monitoreo centralizado para operaciones a corta y larga distancia. Integramos historizadores de datos de alto rendimiento, interfaces para cómputo en la nube (IIoT), diagnósticos predictivos y reporteo automático para maximizar la toma de decisiones.
+                                            Integración de consolas de monitoreo centralizadas para el control operativo de baterías, plantas y líneas de transporte. Incorporamos historizadores de eventos de alta fidelidad, gestión de alarmas por criticidad y registros de variables de proceso (presión, flujo, nivel y temperatura) para la toma de decisiones inmediata en campo.
                                         </p>
                                     </div>
                                 </div>
@@ -626,12 +736,12 @@
                             <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
                                 <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Sistemas Instrumentados de Seguridad (SIS)</h3>
                                 <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
-                                    Hardware y software especializado para paros de emergencia (ESD) y detección continua de fuego y gas (F&G).
+                                    Sistemas de Paro por Emergencia (ESD), detección continua de Gas y Fuego (F&G) y tableros de protección para salvaguarda de instalaciones.
                                 </p>
                                 <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
                                     <div class="overflow-hidden">
                                         <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
-                                            Ingeniería y suministro de sistemas certificados bajo normativas internacionales IEC 61508 / 61511 (SIL 2 y SIL 3). Integramos tableros de seguridad para pozos, matrices causa-efecto y arquitecturas redundantes para proteger vidas e infraestructura.
+                                            Ingeniería y suministro de sistemas certificados bajo normativas internacionales IEC 61508 / 61511 (SIL 2 y SIL 3). Desarrollamos la lógica de seguridad para Paros de Emergencia (ESD) escalonados, detección direccionable de mezclas explosivas, gases tóxicos y flama (F&G), y ejecución de matrices causa-efecto con arquitecturas tolerantes a fallas.
                                         </p>
                                     </div>
                                 </div>
@@ -640,16 +750,16 @@
                                 </button>
                             </div>
 
-                            <!-- Cuadrante 04: Redes IT/OT y Ciberseguridad -->
+                            <!-- Cuadrante 04: SDMC y Control de Pozos -->
                             <div class="operation-card flex flex-col border-b border-r border-gray-700/50 p-8 lg:p-12 hover:bg-white/[0.02] transition-colors duration-300 min-h-[250px]">
-                                <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Redes Industriales IT/OT y Ciberseguridad</h3>
+                                <h3 class="font-bold text-white text-xl lg:text-2xl mb-4 leading-snug">Sistemas Digitales de Monitoreo y Control (SDMC)</h3>
                                 <p class="short-text text-gray-400 text-sm lg:text-base leading-relaxed font-light transition-opacity duration-300">
-                                    Infraestructura de comunicaciones robusta y blindaje digital para sistemas de control industrial (ICS).
+                                    Integración de tableros SDMC, consolas locales de monitoreo y sistemas de control para cabezales y pozos petroleros (TSCP).
                                 </p>
                                 <div class="expanded-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
                                     <div class="overflow-hidden">
                                         <p class="text-gray-300 text-sm lg:text-base leading-relaxed font-light opacity-0 transition-opacity duration-500 delay-100 pt-2">
-                                            Convergencia segura de redes operativas con entornos corporativos. Ejecutamos auditorías de riesgo, segmentación de redes industriales, detección de intrusiones y aseguramiento perimetral bajo marcos de referencia ISA/IEC 62443 y NIST.
+                                            Configuración y suministro de tableros dedicados al monitoreo y control digital de procesos en tiempo real. Integramos paneles de seguridad y control de pozos (TSCP / WHCP), vinculando la instrumentación de campo, accionamiento de válvulas maestras y lazos de corte de flujo para garantizar un control operativo local seguro y confiable.
                                         </p>
                                     </div>
                                 </div>
