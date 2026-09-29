@@ -290,7 +290,7 @@
                                     </div>
 
                                     <!-- Proyecto 2022 -->
-                                    <div class="flex flex-col items-center cursor-pointer group px-2 flex-shrink-0" style="width: calc(100% / 8);" onclick="openProjectModal('2022', 'Reingeniería de trenes de deshidratación', 'EIGSA', 'Bellota / Jujo, Tabasco', 'Ingeniería, suministro, instalación, comisionamiento, pruebas preoperacionales y puesta en marcha de dos trenes de deshidratación y desalado de crudo.', 'assets/images/reingenieriaTrenes_galeria.jpeg')">
+                                    <div class="flex flex-col items-center cursor-pointer group px-2 flex-shrink-0" style="width: calc(100% / 8);" onclick="openProjectModal('2022', 'Reingeniería de trenes de deshidratación', 'EIGSA', 'Bellota / Jujo, Tabasco', 'Ingeniería, suministro, instalación, comisionamiento, pruebas preoperacionales y puesta en marcha de dos trenes de deshidratación y desalado de crudo.', 'assets/images/2022_reingeniera_deshidratacion.jpeg')">
                                         <span class="text-2xl font-black text-mazavik-accent mb-3 group-hover:scale-110 transition-transform">2022</span>
                                         <div class="w-6 h-6 rounded-full bg-mazavik-dark border-4 border-white shadow group-hover:bg-mazavik-accent transition-colors duration-300 mb-6"></div>
                                         <div class="text-center px-1">
@@ -301,7 +301,7 @@
                                     </div>
 
                                     <!-- Proyecto 2023 -->
-                                    <div class="flex flex-col items-center cursor-pointer group px-2 flex-shrink-0" style="width: calc(100% / 8);" onclick="openProjectModal('2023', 'Terminación mecánica paquete GB-1500A/R', 'ATLAS COPCO', 'Patio Cotemar, Cd. del Carmen', 'Servicio de asistencia técnica para terminación mecánica de paquete de aire de instrumentos GB-1500A/R.', 'assets/images/2023_TerminacionMecanica.jpg')">
+                                    <div class="flex flex-col items-center cursor-pointer group px-2 flex-shrink-0" style="width: calc(100% / 8);" onclick="openProjectModal('2023', 'Terminación mecánica paquete GB-1500A/R', 'ATLAS COPCO', 'Patio Cotemar, Cd. del Carmen', 'Servicio de asistencia técnica para terminación mecánica de paquete de aire de instrumentos GB-1500A/R.', 'assets/images/terminacionMecanica_galeria.jpg')">
                                         <span class="text-2xl font-black text-mazavik-accent mb-3 group-hover:scale-110 transition-transform">2023</span>
                                         <div class="w-6 h-6 rounded-full bg-mazavik-dark border-4 border-white shadow group-hover:bg-mazavik-accent transition-colors duration-300 mb-6"></div>
                                         <div class="text-center px-1">
@@ -587,6 +587,9 @@
             <!-- Imagen que se actualizará -->
             <img id="gallery-modal-img" src="" alt="Proyecto" class="max-h-[70vh] w-auto object-contain rounded-lg shadow-2xl transition-opacity duration-300">
             
+            <!-- Etiqueta de Video -->
+            <video id="gallery-modal-video" src="" controls loop muted class="max-h-[70vh] w-auto object-contain rounded-lg shadow-2xl transition-opacity duration-300 hidden"></video>
+            
             <!-- Textos abajo de la imagen -->
             <div class="mt-6 text-center w-full">
                 <h4 id="gallery-modal-caption" class="text-white text-lg md:text-xl font-light tracking-wide leading-relaxed"></h4>
@@ -737,8 +740,10 @@
                 caption: "Ingeniería, fabricación y pruebas de funcionamiento de cuarto eléctrico y de control para compresión de gas."
             },
             {
-                src: "assets/images/2022_reingenieriaTrenes_v2.jpeg",
-                caption: "Reingeniería (revamp) y puesta en marcha de trenes de deshidratación y desalado de crudo."
+                type: "video",
+                src: "assets/images/reingenieria_deshidratacion.mp4",
+                thumb: "assets/images/2022_reingeniera_deshidratacion.jpeg", 
+                caption: "Video: Reingeniería y puesta en marcha de trenes de deshidratación de crudo (Proyecto 2022)."
             },
             {
                 src: "assets/images/tableroDeControl_galeria.jpg",
@@ -747,6 +752,10 @@
             {
                 src: "assets/images/terminacionMecanica_galeria.jpg",
                 caption: "Asistencia técnica y terminación mecánica de paquete de aire de instrumentos."
+            },
+            {
+                src: "assets/images/2022_reingenieriaTrenes_v2.jpeg",
+                caption: "Reingeniería (revamp) y puesta en marcha de trenes de deshidratación y desalado de crudo."
             }
         ];
 
@@ -761,10 +770,10 @@
             const idx1 = (currentGridStart + 1) % total;
             const idx2 = (currentGridStart + 2) % total;
 
-            // Actualizamos la fuente (src) de las 3 imágenes en la página
-            document.getElementById('grid-img-main').src = galleryItems[idx0].src;
-            document.getElementById('grid-img-sub1').src = galleryItems[idx1].src;
-            document.getElementById('grid-img-sub2').src = galleryItems[idx2].src;
+            // Actualizamos la fuente (src) de las 3 imágenes en la página usando el thumb si es video
+            document.getElementById('grid-img-main').src = galleryItems[idx0].thumb || galleryItems[idx0].src;
+            document.getElementById('grid-img-sub1').src = galleryItems[idx1].thumb || galleryItems[idx1].src;
+            document.getElementById('grid-img-sub2').src = galleryItems[idx2].thumb || galleryItems[idx2].src;
 
             // Ajustamos el "onclick" para que al dar clic, el modal abra la foto correcta
             document.getElementById('grid-item-main').setAttribute('onclick', `openGalleryModal(${idx0})`);
@@ -800,6 +809,9 @@
 
         function closeGalleryModal() {
             const modal = document.getElementById('gallery-modal');
+            const videoEl = document.getElementById('gallery-modal-video');
+            if (videoEl) videoEl.pause(); // Detiene el video al cerrar la ventana
+            
             modal.classList.add('opacity-0', 'pointer-events-none');
             document.body.style.overflow = ''; 
         }
@@ -818,16 +830,32 @@
 
         function updateGalleryModal() {
             const imgEl = document.getElementById('gallery-modal-img');
+            const videoEl = document.getElementById('gallery-modal-video');
             const captionEl = document.getElementById('gallery-modal-caption');
             const counterEl = document.getElementById('gallery-modal-counter');
             
+            const currentItem = galleryItems[currentGalleryIndex];
+
             imgEl.style.opacity = 0;
+            videoEl.style.opacity = 0;
             
             setTimeout(() => {
-                imgEl.src = galleryItems[currentGalleryIndex].src;
-                captionEl.innerText = galleryItems[currentGalleryIndex].caption;
-                counterEl.innerText = `Imagen ${currentGalleryIndex + 1} de ${galleryItems.length}`;
-                imgEl.style.opacity = 1;
+                captionEl.innerText = currentItem.caption;
+                counterEl.innerText = `Archivo ${currentGalleryIndex + 1} de ${galleryItems.length}`;
+                
+                if (currentItem.type === 'video') {
+                    imgEl.classList.add('hidden');
+                    videoEl.classList.remove('hidden');
+                    videoEl.src = currentItem.src;
+                    videoEl.style.opacity = 1;
+                    videoEl.play(); // Reproduce el video al abrirlo
+                } else {
+                    videoEl.classList.add('hidden');
+                    videoEl.pause(); // Detiene el video si pasas a una foto
+                    imgEl.classList.remove('hidden');
+                    imgEl.src = currentItem.src;
+                    imgEl.style.opacity = 1;
+                }
             }, 200);
         }
 
